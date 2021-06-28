@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Crud {
     public void readToDo(List<Todo> list) {
-        System.out.println("No\t등록일자\t제목\t 기한   내용");
-        System.out.println("---------------------------------");
+        System.out.println("No\t등록일자\t\t 제목\t기한\t\t\t내용");
+        System.out.println("------------------------------------------");
         if(list == null) return;
         for(int i=0; i<list.size(); i++){
             Todo x = list.get(i);
@@ -15,7 +15,7 @@ public class Crud {
             SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
             Date date = x.getDate();
             Date deadLine = x.getDeadLine();
-            System.out.println(j + "\t" + fDate.format(date)  + "\t" + x.getTitle() + "\t" + fDate.format(deadLine) + " " + x.getContext());
+            System.out.println(j + "\t" + fDate.format(date)  + "\t " + x.getTitle() + "\t" + fDate.format(deadLine) + "\t\t" + x.getContext());
         }
         System.out.println(" ");
     }
@@ -81,21 +81,11 @@ public class Crud {
             System.out.println("잘못 입력하셨습니다.");
             return list;
         }
-        Date date;
         String title;
         String deadLine;
         String context;
         Todo alreadyOne = list.get(index);
-        //등록일자
         SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
-        date = new Date(System.currentTimeMillis());
-        String sDate = fDate.format(date);
-        try {
-            date = fDate.parse(sDate);
-            alreadyOne.setDate(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         //제목
         System.out.println("제목을 입력하세요.");
         Scanner write =  new Scanner(System.in);
