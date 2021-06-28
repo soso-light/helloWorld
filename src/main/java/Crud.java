@@ -17,7 +17,7 @@ public class Crud {
             Date deadLine = x.getDeadLine();
             System.out.println(j + "\t" + fDate.format(date)  + "\t" + x.getTitle() + "\t" + fDate.format(deadLine) + " " + x.getContext());
         }
-        System.out.println("\n");
+        System.out.println(" ");
     }
 
     public List<Todo> createToDo(List<Todo> list) {
@@ -67,7 +67,7 @@ public class Crud {
         System.out.println("수정할 할 일의 번호를 선택하세요.");
         Scanner input = new Scanner(System.in);
         index = input.nextInt();
-        System.out.println("정말로 수정하시겠습니까? ");
+        System.out.println("정말로 실행하시겠습니까?(취소 -1 입력) ");
         input = new Scanner(System.in);
         int reCheck = input.nextInt();
         if (reCheck == -1) return -1;
@@ -116,7 +116,7 @@ public class Crud {
         System.out.println("내용을 입력하세요.");
         write =  new Scanner(System.in);
         context = write.nextLine();
-        alreadyOne.setTitle(context);
+        alreadyOne.setContext(context);
         return list;
     }
 
@@ -124,6 +124,7 @@ public class Crud {
         readToDo(list);
         int index = selectNumber();
         list.remove(index);
+        System.out.println("삭제되었습니다.");
         return list;
     }
 }

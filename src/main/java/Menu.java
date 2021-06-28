@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
 
     public void printMenu (){
+        System.out.println(" ");
         System.out.println("**To Do List**");
         System.out.println("[1]할 일 조회");
         System.out.println("[2]할 일 추가");
