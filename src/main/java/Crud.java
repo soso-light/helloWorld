@@ -9,7 +9,8 @@ public class Crud {
         System.out.println("등록일자 제목\t 기한   내용");
         System.out.println("------------------------------");
         if(list == null) return;
-        for(Todo x : list){
+        for(int i=0; i<list.size(); i++){
+            Todo x = list.get(i);
             System.out.println(x.getDate() + " " + x.getTitle() + "\t" + x.getDeadLine() + " " + x.getContext());
         }
     }
@@ -50,7 +51,7 @@ public class Crud {
         write =  new Scanner(System.in);
         context = write.nextLine();
         newOne.setTitle(context);
-        // add Todo
+        // add To do
         list.add(newOne);
         return list;
     }
@@ -114,7 +115,6 @@ public class Crud {
     public List<Todo> deleteToDo(List<Todo> list) {
         int index = selectNumber();
         list.remove(index);
-
         return list;
     }
 }
