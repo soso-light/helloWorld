@@ -10,7 +10,7 @@ public class Main {
         myList.run();
     }
     public void run(){
-        toDoList = new ArrayList<>();
+        toDoList = new ArrayList<>(1);
         Menu menu = new Menu();
         menuNum = menu.chooseMenu();
         boolean t = true;
@@ -20,10 +20,11 @@ public class Main {
     }
 
     private boolean menuChosen(int input){
+        Crud crud = new Crud();
         switch (input){
-            case 1: readToDo();
+            case 1: crud.readToDo(toDoList);
                     break;
-            case 2: //readToDo();
+            case 2: crud.createToDo(toDoList);
                     //break;
             case 3: //readToDo();
                     //break;
@@ -35,7 +36,4 @@ public class Main {
         return true;
     }
 
-    private void readToDo(){
-
-    }
 }
