@@ -24,12 +24,12 @@ public class Main {
         switch (input){
             case 1: crud.readToDo(toDoList);
                     break;
-            case 2: crud.createToDo(toDoList);
-                    //break;
-            case 3: //readToDo();
-                    //break;
-            case 4: //readToDo();
-                    //break;
+            case 2: toDoList = crud.createToDo(toDoList);
+                    break;
+            case 3: toDoList = crud.updateToDo(toDoList);
+                    break;
+            case 4: toDoList = crud.deleteToDo(toDoList);
+                    break;
             case 0: return false;
             default: System.out.println("다시 입력하세요.");
         }

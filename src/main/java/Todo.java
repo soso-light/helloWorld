@@ -6,7 +6,6 @@ import java.util.Date;
 public class Todo {
     // 해야 할 일 / 제목, 분류, 기한, 내용, 등록일자
     private String title;
-    private String category;
     private Date deadLine;
     private String context;
     private Date date;
@@ -21,18 +20,6 @@ public class Todo {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    /**
-     * for get category in other method.
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public Date getDeadLine() {
