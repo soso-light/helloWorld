@@ -12,9 +12,9 @@ public class Main {
     public void run(){
         toDoList = new ArrayList<>(1);
         Menu menu = new Menu();
-        menuNum = menu.chooseMenu();
         boolean t = true;
         while(t){
+            menuNum = menu.chooseMenu();
             t = menuChosen(menuNum);
         }
     }
