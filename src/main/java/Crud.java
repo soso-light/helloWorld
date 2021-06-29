@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Crud {
+    final private SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
+
     public List<Todo> menu1234(List<Todo> list, int menu){
         switch (menu){
             case 1: readToDo(list);
@@ -25,7 +27,6 @@ public class Crud {
         for(int i=0; i<list.size(); i++){
             Todo x = list.get(i);
             int j = i+1;
-            SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
             Date date = x.getDate();
             Date deadLine = x.getDeadLine();
             System.out.println(j + "\t" + fDate.format(date)  + "\t " + x.getTitle() + "\t" + fDate.format(deadLine) + "\t\t" + x.getContext());
@@ -40,16 +41,7 @@ public class Crud {
         String context;
         Todo newOne = new Todo();
         //등록일자
-        SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
-        date = new Date(System.currentTimeMillis());
-        String sDate = fDate.format(date);
-        try {
-            date = fDate.parse(sDate);
-            newOne.setDate(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        //제목
+        date = new Date(System.currentTimeMillis());//제목
         System.out.println("제목을 입력하세요.");
         Scanner write =  new Scanner(System.in);
         title = write.nextLine();
@@ -98,7 +90,6 @@ public class Crud {
         String deadLine;
         String context;
         Todo alreadyOne = list.get(index);
-        SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
         //제목
         System.out.println("제목을 입력하세요.");
         Scanner write =  new Scanner(System.in);
