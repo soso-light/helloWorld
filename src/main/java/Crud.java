@@ -35,7 +35,7 @@ public class Crud {
     }
 
     private List<Todo> createToDo(List<Todo> list) {
-        Date date;
+        //Date date;
         String title;
         String deadLine;
         String context;
