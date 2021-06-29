@@ -48,6 +48,6 @@ public class Todo {
 
     @Override
     public String toString() {
-        return this.title + "/" + this.date+ "/" + this.deadLine+ "/" + this.context;
+        return this.title + " / " + this.date+ " / " + this.deadLine+ " / " + this.context;
     }
 }

@@ -9,6 +9,7 @@ public class Menu {
         System.out.println("[2]할 일 추가");
         System.out.println("[3]수정");
         System.out.println("[4]삭제");
+        System.out.println("[5]파일저장");
         System.out.println("[0]종료");
         System.out.println("**************");
     }

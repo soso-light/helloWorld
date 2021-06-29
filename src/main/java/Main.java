@@ -21,6 +21,7 @@ public class Main {
 
     private boolean menuChosen(int input){
         Crud crud = new Crud();
+        FileService fileService = new FileService();
         switch (input){
             case 1: crud.readToDo(toDoList);
                     break;
@@ -29,6 +30,8 @@ public class Main {
             case 3: toDoList = crud.updateToDo(toDoList);
                     break;
             case 4: toDoList = crud.deleteToDo(toDoList);
+                    break;
+            case 5: fileService.saveFile(toDoList);
                     break;
             case 0: return false;
             default: System.out.println("다시 입력하세요.");
