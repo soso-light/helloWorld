@@ -23,7 +23,7 @@ public class Crud {
         for(int i=0; i<list.size(); i++){
             Todo x = list.get(i);
             int j = i+1;
-            System.out.println(j + "\t" + x.getDate()  + "\t " + x.getTitle() + "\t" + x.getDeadLine() + "\t\t" + x.getContext());
+            System.out.println(j + "\t" + x.getDate()  + "\t " + x.getTitle() + "\t" + x.getDeadLine() + "\t" + x.getContext());
         }
         System.out.println(" ");
     }

@@ -1,13 +1,12 @@
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 
 public class FileService {
-    private String path = Paths.get(".").toAbsolutePath().toString();
-    private String filename = path + "/data.txt";
+    private final String path = Paths.get(".").toAbsolutePath().toString();
+    private final String filename = path + "/data.txt";
 
     public void saveFile(List<Todo> list){
         try {
@@ -31,7 +30,7 @@ public class FileService {
             FileReader fileReader = new FileReader(file);
             BufferedReader bfReader = new BufferedReader(fileReader);
 
-            String line = "";
+            String line;
             while((line = bfReader.readLine()) != null){
                 toDoList = parseFile(line, toDoList);
             }
@@ -45,7 +44,7 @@ public class FileService {
     }
 
     private List<Todo> parseFile (String line, List<Todo> toDoList){
-        StringTokenizer st = new StringTokenizer(line, "/");
+        StringTokenizer st = new StringTokenizer(line, "|");
         String title = st.nextToken().trim();
         String date = st.nextToken().trim();
         String deadline = st.nextToken().trim();

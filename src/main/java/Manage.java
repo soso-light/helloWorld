@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Manage {
+
     private List<Todo> toDoList;
     private int menuNum;
     private Crud crud = new Crud();
@@ -10,6 +11,7 @@ public class Manage {
 
     public void run(){
         toDoList = fileService.readFile();
+        System.out.println("** File is successful loaded! **");
         Menu menu = new Menu();
         boolean t = true;
         while(t){
@@ -24,7 +26,7 @@ public class Manage {
                     break;
             case 5: fileService.saveFile(toDoList);
                     break;
-            case 6: search.searchDeadline(toDoList);
+            case 6: case 7: search.menu67(toDoList, input);
                 break;
             case 0: {
                 System.out.println("** 프로그램 종료 **");

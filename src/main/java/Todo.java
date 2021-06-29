@@ -8,6 +8,7 @@ import java.util.Date;
 public class Todo {
     private SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
     // 해야 할 일 / 제목, 분류, 기한, 내용, 등록일자
+    private int number;
     private String title;
     private String deadLine;
     private String context;
@@ -64,8 +65,6 @@ public class Todo {
 
     @Override
     public String toString() {
-        String stDate = fDate.format(date);
-        String stDeadLine = fDate.format(deadLine);
-        return this.title + " / " + stDate+ " / " + stDeadLine+ " / " + this.context;
+        return this.number + " | " + this.title + " | " + this.date+ " | " + this.deadLine+ " | " + this.context;
     }
 }

@@ -11,7 +11,7 @@ public class Menu {
         System.out.println("[4]삭제");
         System.out.println("[5]파일저장");
         System.out.println("[6]마감 검색");
-        //System.out.println("[7]파일저장");
+        System.out.println("[7]파일저장");
         System.out.println("[0]종료");
         System.out.println("**************");
     }
