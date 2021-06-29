@@ -9,28 +9,20 @@ public class Todo {
     private SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
     // 해야 할 일 / 제목, 분류, 기한, 내용, 등록일자
     private String title;
-    private Date deadLine;
+    private String deadLine;
     private String context;
-    private Date date;
+    private String date;
 
     public Todo(){
         title=null;
-        date = new Date(System.currentTimeMillis());//제목
+        date = fDate.format(new Date(System.currentTimeMillis()));//제목
         deadLine=null;
         context=null;
     }
     public Todo(String title, String date, String deadLine, String context){
         this.title = title;
-        try {
-            this.date = fDate.parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        try {
-            this.deadLine = fDate.parse(deadLine);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        this.date = date;
+        this.deadLine = deadLine;
         this.context = context;
     }
 
@@ -46,11 +38,11 @@ public class Todo {
         this.title = title;
     }
 
-    public Date getDeadLine() {
+    public String getDeadLine() {
         return deadLine;
     }
 
-    public void setDeadLine(Date deadLine) {
+    public void setDeadLine(String deadLine) {
         this.deadLine = deadLine;
     }
 
@@ -62,11 +54,11 @@ public class Todo {
         this.context = context;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

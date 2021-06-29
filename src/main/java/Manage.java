@@ -6,6 +6,7 @@ public class Manage {
     private int menuNum;
     private Crud crud = new Crud();
     private FileService fileService = new FileService();
+    private Search search = new Search();
 
     public void run(){
         toDoList = fileService.readFile();
@@ -23,6 +24,8 @@ public class Manage {
                     break;
             case 5: fileService.saveFile(toDoList);
                     break;
+            case 6: search.searchDeadline(toDoList);
+                break;
             case 0: {
                 System.out.println("** 프로그램 종료 **");
                 return false;

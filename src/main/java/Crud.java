@@ -1,11 +1,7 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Crud {
-    final private SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
 
     public List<Todo> menu1234(List<Todo> list, int menu){
         switch (menu){
@@ -20,28 +16,24 @@ public class Crud {
         }
         return list;
     }
-    private void readToDo(List<Todo> list) {
+    public static void readToDo(List<Todo> list) {
         System.out.println("No\t등록일자\t\t 제목\t기한\t\t\t내용");
         System.out.println("------------------------------------------");
         if(list == null) return;
         for(int i=0; i<list.size(); i++){
             Todo x = list.get(i);
             int j = i+1;
-            Date date = x.getDate();
-            Date deadLine = x.getDeadLine();
-            System.out.println(j + "\t" + fDate.format(date)  + "\t " + x.getTitle() + "\t" + fDate.format(deadLine) + "\t\t" + x.getContext());
+            System.out.println(j + "\t" + x.getDate()  + "\t " + x.getTitle() + "\t" + x.getDeadLine() + "\t\t" + x.getContext());
         }
         System.out.println(" ");
     }
 
     private List<Todo> createToDo(List<Todo> list) {
-        //Date date;
         String title;
         String deadLine;
         String context;
         Todo newOne = new Todo();
         //제목
-        //date = new Date(System.currentTimeMillis());//제목
         System.out.println("제목을 입력하세요.");
         Scanner write =  new Scanner(System.in);
         title = write.nextLine();
@@ -50,13 +42,8 @@ public class Crud {
         System.out.println("마감 기한을 입력하세요(MM/dd hh:mm).");
         write =  new Scanner(System.in);
         deadLine = write.nextLine();
-        try {
-            Date n = fDate.parse(deadLine);
-            newOne.setDeadLine(n);
-        } catch (ParseException e) {
-            System.out.println("형식에 따라 입력하지 않았습니다(MM/dd hh:mm).");
-            e.printStackTrace();
-        }
+        newOne.setDeadLine(deadLine);
+
         //내용
         System.out.println("내용을 입력하세요.");
         write =  new Scanner(System.in);
@@ -99,13 +86,7 @@ public class Crud {
         System.out.println("마감 기한을 입력하세요(MM/dd hh:mm).");
         write =  new Scanner(System.in);
         deadLine = write.nextLine();
-        try {
-            Date n = fDate.parse(deadLine);
-            alreadyOne.setDeadLine(n);
-        } catch (ParseException e) {
-            System.out.println("형식에 따라 입력하지 않았습니다(MM/dd hh:mm).");
-            e.printStackTrace();
-        }
+        alreadyOne.setDeadLine(deadLine);
         //내용
         System.out.println("내용을 입력하세요.");
         write =  new Scanner(System.in);
