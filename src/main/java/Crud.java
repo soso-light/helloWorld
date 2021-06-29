@@ -1,7 +1,10 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Crud {
+    private final SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
 
     public List<Todo> menu1234(List<Todo> list, int menu){
         switch (menu){
@@ -29,27 +32,26 @@ public class Crud {
     }
 
     private List<Todo> createToDo(List<Todo> list) {
+        int number;
         String title;
         String deadLine;
         String context;
-        Todo newOne = new Todo();
+        number = list.size();
+        String date = fDate.format(new Date(System.currentTimeMillis()));//제목
         //제목
         System.out.println("제목을 입력하세요.");
         Scanner write =  new Scanner(System.in);
         title = write.nextLine();
-        newOne.setTitle(title);
         //기한
         System.out.println("마감 기한을 입력하세요(MM/dd hh:mm).");
         write =  new Scanner(System.in);
         deadLine = write.nextLine();
-        newOne.setDeadLine(deadLine);
-
         //내용
         System.out.println("내용을 입력하세요.");
         write =  new Scanner(System.in);
         context = write.nextLine();
-        newOne.setContext(context);
         // add To do
+        Todo newOne = new Todo(number, title, date, deadLine, context);
         list.add(newOne);
         return list;
     }

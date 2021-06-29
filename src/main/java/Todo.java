@@ -6,7 +6,6 @@ import java.util.Date;
  * it is construct of To do list.
  */
 public class Todo {
-    private SimpleDateFormat fDate = new SimpleDateFormat("MM/dd hh:mm");
     // 해야 할 일 / 제목, 분류, 기한, 내용, 등록일자
     private int number;
     private String title;
@@ -14,13 +13,17 @@ public class Todo {
     private String context;
     private String date;
 
-    public Todo(){
-        title=null;
-        date = fDate.format(new Date(System.currentTimeMillis()));//제목
-        deadLine=null;
-        context=null;
+
+    public int getNumber() {
+        return number;
     }
-    public Todo(String title, String date, String deadLine, String context){
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Todo(int number, String title, String date, String deadLine, String context){
+        this.number = number;
         this.title = title;
         this.date = date;
         this.deadLine = deadLine;

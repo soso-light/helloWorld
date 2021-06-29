@@ -17,13 +17,12 @@ public class Search {
         System.out.println("검색할 기한 입력(MM/dd)");
         br = new BufferedReader(new InputStreamReader(System.in));
         try {
-            int i=0;
             String deadline = br.readLine();
             System.out.println("No\t등록일자\t\t 제목\t기한\t\t\t내용");
             System.out.println("------------------------------------------");
             for(Todo t : list){
                 if(t.getDeadLine().contains(deadline)) {
-                    System.out.println(i++ + "\t" + t.getDate() + "\t " + t.getTitle() + "\t" + t.getDeadLine() + "\t\t" + t.getContext());
+                    System.out.println(t.getNumber() + "\t" + t.getDate() + "\t " + t.getTitle() + "\t" + t.getDeadLine() + "\t\t" + t.getContext());
                 }
             }
         } catch (IOException e) {
@@ -34,13 +33,12 @@ public class Search {
         System.out.println("검색할 제목 입력");
         br = new BufferedReader(new InputStreamReader(System.in));
         try {
-            int i=0;
             String title = br.readLine();
             System.out.println("No\t등록일자\t\t 제목\t기한\t\t\t내용");
             System.out.println("------------------------------------------");
             for(Todo t : list){
                 if(t.getTitle().contains(title)) {
-                    System.out.println(i++ + "\t" + t.getDate() + "\t " + t.getTitle() + "\t" + t.getDeadLine() + "\t\t" + t.getContext());
+                    System.out.println(t.getNumber() + "\t" + t.getDate() + "\t " + t.getTitle() + "\t" + t.getDeadLine() + "\t\t" + t.getContext());
                 }
             }
         } catch (IOException e) {

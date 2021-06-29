@@ -45,11 +45,12 @@ public class FileService {
 
     private List<Todo> parseFile (String line, List<Todo> toDoList){
         StringTokenizer st = new StringTokenizer(line, "|");
+        int number = Integer.parseInt(st.nextToken().trim());
         String title = st.nextToken().trim();
         String date = st.nextToken().trim();
         String deadline = st.nextToken().trim();
         String context = st.nextToken().trim();
-        toDoList.add(new Todo(title, date, deadline, context));
+        toDoList.add(new Todo(number, title, date, deadline, context));
 
         return toDoList;
     }
