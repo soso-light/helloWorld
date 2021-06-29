@@ -8,7 +8,7 @@ public class Manage {
     private FileService fileService = new FileService();
 
     public void run(){
-        toDoList = new ArrayList<>(1);
+        toDoList = fileService.readFile();
         Menu menu = new Menu();
         boolean t = true;
         while(t){
