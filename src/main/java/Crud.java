@@ -5,7 +5,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Crud {
-    public void readToDo(List<Todo> list) {
+    public List<Todo> menu1234(List<Todo> list, int menu){
+        switch (menu){
+            case 1: readToDo(list);
+                break;
+            case 2: list = createToDo(list);
+                break;
+            case 3: list = updateToDo(list);
+                break;
+            case 4: list = deleteToDo(list);
+                break;
+        }
+        return list;
+    }
+    private void readToDo(List<Todo> list) {
         System.out.println("No\t등록일자\t\t 제목\t기한\t\t\t내용");
         System.out.println("------------------------------------------");
         if(list == null) return;
@@ -20,7 +33,7 @@ public class Crud {
         System.out.println(" ");
     }
 
-    public List<Todo> createToDo(List<Todo> list) {
+    private List<Todo> createToDo(List<Todo> list) {
         Date date;
         String title;
         String deadLine;
@@ -74,7 +87,7 @@ public class Crud {
         return index-1;
     }
 
-    public List<Todo> updateToDo(List<Todo> list) {
+    private List<Todo> updateToDo(List<Todo> list) {
         readToDo(list);
         int index = selectNumber();
         if(index<0 || index>=list.size()){
@@ -110,7 +123,7 @@ public class Crud {
         return list;
     }
 
-    public List<Todo> deleteToDo(List<Todo> list) {
+    private List<Todo> deleteToDo(List<Todo> list) {
         readToDo(list);
         int index = selectNumber();
         list.remove(index);
