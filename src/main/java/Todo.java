@@ -15,7 +15,7 @@ public class Todo {
 
     public Todo(){
         title=null;
-        date=null;
+        date = new Date(System.currentTimeMillis());//제목
         deadLine=null;
         context=null;
     }

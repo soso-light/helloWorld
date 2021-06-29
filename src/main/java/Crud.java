@@ -40,8 +40,8 @@ public class Crud {
         String deadLine;
         String context;
         Todo newOne = new Todo();
-        //등록일자
-        date = new Date(System.currentTimeMillis());//제목
+        //제목
+        //date = new Date(System.currentTimeMillis());//제목
         System.out.println("제목을 입력하세요.");
         Scanner write =  new Scanner(System.in);
         title = write.nextLine();
