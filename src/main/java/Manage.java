@@ -23,7 +23,10 @@ public class Manage {
                     break;
             case 5: fileService.saveFile(toDoList);
                     break;
-            case 0: return false;
+            case 0: {
+                System.out.println("** 프로그램 종료 **");
+                return false;
+            }
             default: System.out.println("다시 입력하세요.");
         }
         return true;
